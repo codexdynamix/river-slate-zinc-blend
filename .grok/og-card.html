@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Geist";
+    src: url("file:///workspace/node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #FFFFFF;
+  }
+  body {
+    font-family: "Geist", "Liberation Sans", sans-serif;
+    color: #101828;
+    -webkit-font-smoothing: antialiased;
+  }
+  .canvas {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .glow-l {
+    width: 720px;
+    height: 720px;
+    left: -260px;
+    top: -80px;
+    background: radial-gradient(circle, rgba(255, 93, 146, 0.20) 0%, rgba(255, 93, 146, 0) 66%);
+  }
+  .glow-r {
+    width: 760px;
+    height: 760px;
+    right: -280px;
+    bottom: -220px;
+    background: radial-gradient(circle, rgba(77, 107, 255, 0.20) 0%, rgba(77, 107, 255, 0) 68%);
+  }
+  .glow-c {
+    width: 560px;
+    height: 360px;
+    left: 50%;
+    top: -150px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(177, 77, 255, 0.13) 0%, rgba(177, 77, 255, 0) 70%);
+  }
+  .net {
+    position: absolute;
+    inset: 0;
+    width: 1200px;
+    height: 630px;
+    pointer-events: none;
+  }
+  .lockup {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mark {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 26px;
+    filter: drop-shadow(0 10px 22px rgba(177, 77, 255, 0.28));
+  }
+  .word {
+    font-size: 128px;
+    font-weight: 620;
+    line-height: 0.86;
+    letter-spacing: 0.42em;
+    padding-left: 0.42em;
+    background-image: linear-gradient(90deg, #FF5D92 0%, #B14DFF 50%, #4D6BFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .rule {
+    width: 156px;
+    height: 3px;
+    margin-top: 26px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #FF5D92 0%, #B14DFF 50%, #4D6BFF 100%);
+  }
+  .kicker {
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.48em;
+    padding-left: 0.48em;
+    text-transform: uppercase;
+    color: #101828;
+  }
+  .wave {
+    margin-top: 30px;
+    width: 520px;
+    height: 52px;
+    display: block;
+  }
+  .stripe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #FF5D92 0%, #B14DFF 50%, #4D6BFF 100%);
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="glow glow-l"></div>
+    <div class="glow glow-c"></div>
+    <div class="glow glow-r"></div>
+    <svg class="net" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#1264D8" stroke-width="1.25" opacity="0.45">
+        <path d="M86 148 L148 112 L214 164" />
+        <path d="M148 112 L186 78" />
+        <path d="M986 486 L1064 442 L1132 498" />
+        <path d="M1064 442 L1108 392" />
+      </g>
+      <g fill="#1264D8">
+        <circle cx="86" cy="148" r="4.5" opacity="0.7"/>
+        <circle cx="148" cy="112" r="3.5" opacity="0.55"/>
+        <circle cx="214" cy="164" r="5" opacity="0.8"/>
+        <circle cx="186" cy="78" r="3" opacity="0.4"/>
+        <circle cx="986" cy="486" r="4.5" opacity="0.7"/>
+        <circle cx="1064" cy="442" r="3.5" opacity="0.55"/>
+        <circle cx="1132" cy="498" r="5" opacity="0.85"/>
+        <circle cx="1108" cy="392" r="3" opacity="0.4"/>
+      </g>
+      <g>
+        <circle cx="214" cy="164" r="14" fill="none" stroke="#B14DFF" stroke-width="1.25" opacity="0.45"/>
+        <circle cx="1132" cy="498" r="16" fill="none" stroke="#4D6BFF" stroke-width="1.25" opacity="0.5"/>
+      </g>
+    </svg>
+    <div class="lockup">
+      <svg class="mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="markg" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FF5D92"/>
+            <stop offset="0.5" stop-color="#B14DFF"/>
+            <stop offset="1" stop-color="#4D6BFF"/>
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="8" fill="url(#markg)"/>
+        <path d="M7.1 7.15h4.55L16 16.55 20.35 7.15H24.9L18.15 24.85h-4.3L7.1 7.15z" fill="#FFFFFF"/>
+      </svg>
+      <div class="word">VELA</div>
+      <div class="rule"></div>
+      <div class="kicker">Communications cloud</div>
+      <svg class="wave" viewBox="0 0 520 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="waveg" x1="0" y1="0" x2="520" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FF5D92"/>
+            <stop offset="0.5" stop-color="#B14DFF"/>
+            <stop offset="1" stop-color="#4D6BFF"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#waveg)">
+          <rect x="0" y="22" width="8" height="8" rx="4"/>
+          <rect x="14" y="18" width="8" height="16" rx="4"/>
+          <rect x="28" y="20" width="8" height="12" rx="4"/>
+          <rect x="42" y="14" width="8" height="24" rx="4"/>
+          <rect x="56" y="8" width="8" height="36" rx="4"/>
+          <rect x="70" y="16" width="8" height="20" rx="4"/>
+          <rect x="84" y="10" width="8" height="32" rx="4"/>
+          <rect x="98" y="4" width="8" height="44" rx="4"/>
+          <rect x="112" y="14" width="8" height="24" rx="4"/>
+          <rect x="126" y="18" width="8" height="16" rx="4"/>
+          <rect x="140" y="8" width="8" height="36" rx="4"/>
+          <rect x="154" y="0" width="8" height="52" rx="4"/>
+          <rect x="168" y="12" width="8" height="28" rx="4"/>
+          <rect x="182" y="16" width="8" height="20" rx="4"/>
+          <rect x="196" y="6" width="8" height="40" rx="4"/>
+          <rect x="210" y="2" width="8" height="48" rx="4"/>
+          <rect x="224" y="12" width="8" height="28" rx="4"/>
+          <rect x="238" y="18" width="8" height="16" rx="4"/>
+          <rect x="252" y="20" width="8" height="12" rx="4"/>
+          <rect x="266" y="6" width="8" height="40" rx="4"/>
+          <rect x="280" y="0" width="8" height="52" rx="4"/>
+          <rect x="294" y="10" width="8" height="32" rx="4"/>
+          <rect x="308" y="16" width="8" height="20" rx="4"/>
+          <rect x="322" y="8" width="8" height="36" rx="4"/>
+          <rect x="336" y="2" width="8" height="48" rx="4"/>
+          <rect x="350" y="14" width="8" height="24" rx="4"/>
+          <rect x="364" y="20" width="8" height="12" rx="4"/>
+          <rect x="378" y="10" width="8" height="32" rx="4"/>
+          <rect x="392" y="4" width="8" height="44" rx="4"/>
+          <rect x="406" y="14" width="8" height="24" rx="4"/>
+          <rect x="420" y="20" width="8" height="12" rx="4"/>
+          <rect x="434" y="12" width="8" height="28" rx="4"/>
+          <rect x="448" y="18" width="8" height="16" rx="4"/>
+          <rect x="462" y="20" width="8" height="12" rx="4"/>
+          <rect x="476" y="22" width="8" height="8" rx="4"/>
+          <rect x="490" y="22" width="8" height="8" rx="4"/>
+          <rect x="504" y="23" width="8" height="6" rx="3"/>
+        </g>
+      </svg>
+    </div>
+    <div class="stripe"></div>
+  </div>
+</body>
+</html>

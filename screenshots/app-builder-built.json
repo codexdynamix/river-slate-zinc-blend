@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Vela — Voice, Tunnel, and Desk",
+      "hasCanvas": false,
+      "bodyTextLen": 10403,
+      "bodyTextHash": "3e8ed10a05b8dd51e18360815cf10268f2095de172824837f80b933f0ccff996",
+      "bodyTextPrefix": "Skip to content VELA Communications Cloud Products Sales Support",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Vela — Voice, Tunnel, and Desk",
+      "hasCanvas": false,
+      "bodyTextLen": 9469,
+      "bodyTextHash": "4014299db64f46ed6f77d7dd1bf44c3736485b03f5192eccbe2be47b590285dd",
+      "bodyTextPrefix": "Skip to content VELA Try for Free Design, automate, optimize · N",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
